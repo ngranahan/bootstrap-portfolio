@@ -1,7 +1,140 @@
-.bio-photo {
-    max-width: 200px;
-} 
+/* /* Adjust: border radius at larger screen widths, */
+Left and right margin in navigation,
+main-content fluid height,
+header styles,
+link styles */
+
+/* MAIN STYLES */
+
+html {
+    position: relative;
+}
+
+.navbar-right a {
+    color: dimgray;
+}
+
+a.navbar-brand {
+    font-family: 'Georgia', Times, Times New Roman, serif;
+    font-weight: 900;
+    font-size: 2em;
+    color: white;
+}
+
+h2, h3 {
+    font-family: 'Georgia', Times, Times New Roman, serif;
+    font-weight: 900;
+    color: cadetblue;
+}
+
+.underline {
+    position: relative;
+    padding-bottom: 20px; 
+}
+
+.underline:after {
+    position: absolute;
+    content: '';
+    height: 2px;
+    bottom: -1px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: gainsboro;
+}
+
+/* NAVIGATION STYLES */
+
+nav {
+    background-color: white;
+    padding-left: 8%;
+    padding-right: 10%;
+}
+
+.navbar {
+    margin-bottom: 0;
+    border: 0;
+}
+
+.navbar-header {
+    background-color: cadetblue;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.navbar-brand {
+    color: gainsboro;
+}
+
+
+
+
+/* MAIN CONTENT STYLES */
+
+.main-content {
+    background: rgb(241, 241, 241) url("../images/shattered_@2x.png") repeat center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    height: 85vh;
+    padding-bottom: 40px;
+    border-top: 2px solid dimgray;
+
+}
+
+section {
+    background-color: white;
+    padding: 20px;
+}
+
+aside {
+    background-color: white;
+    padding: 20px;
+    min-width: 250px;
+    margin: 0 auto;
+
+}
 
 .icon {
     width: 60px;
 }
+.row-space {
+    height: 40px;
+}
+
+
+
+/* ABOUT STYLES */
+
+.bio-photo {
+    max-width: 200px;
+    float: left;
+    padding-right: 10px;
+} 
+
+/* CONTACT STLES */
+
+.input-text, textarea {
+    width: 100%;
+    margin: 5px 0 10px 0;
+}
+
+/* FOOTER STYLES */
+
+.footer {
+    background-color: dimgray;
+    width: 100%;
+    height: 60px;
+    line-height: 4;
+    position: absolute;
+    bottom: 0;
+    border-top: 8px solid cadetblue;
+
+}
+
+
+
+
+
+
+
