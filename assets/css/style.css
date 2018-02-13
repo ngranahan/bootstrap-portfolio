@@ -1,37 +1,81 @@
-/* /* Adjust: border radius at larger screen widths, */
-Left and right margin in navigation,
-main-content fluid height,
-header styles,
-link styles */
-
-/* MAIN STYLES */
-
-html {
+body {
     position: relative;
+    padding-bottom: 65px;
 }
 
-.navbar-right a {
+/* NAVIGATION STYLES */
+
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: rgb(236, 236, 240);
+    background-image: none !important;
+    padding: 1% 40px 1% 40px;
+    font-size: 1.2em;
+    border-bottom: 2px solid gainsboro;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+.navbar-brand {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 2em;
+    
+}
+.navbar-inverse .navbar-brand {
+    color: cadetblue;
+    text-shadow: none;
+}
+.navbar-inverse .navbar-brand:hover {
+    color: rgb(71, 119, 121);
+}
+.navbar-right {
+    font-family: 'Quicksand', sans-serif;
+}
+.navbar-inverse,
+.navbar-inverse .navbar-nav>li>a {
+    text-shadow: none;
     color: dimgray;
 }
 
-a.navbar-brand {
-    font-family: 'Georgia', Times, Times New Roman, serif;
-    font-weight: 900;
-    font-size: 2em;
-    color: white;
+.navbar-inverse, .navbar-inverse .navbar-nav>li>a:hover {
+    color: rgb(27, 27, 27);
 }
 
-h2, h3 {
-    font-family: 'Georgia', Times, Times New Roman, serif;
-    font-weight: 900;
+.navbar-inverse .navbar-nav>.active>a,
+.navbar-inverse .navbar-nav>.open>a,
+.navbar-inverse .navbar-nav>.active>a:hover,
+.navbar-inverse .navbar-nav>.active>a:focus {
+    box-shadow: none;
+    background-image: none !important;
+    color: rgb(27, 27, 27);
+    background-color: rgb(236, 236, 240);
+    font-size: 1.21em;
+}
+.navbar-inverse .navbar-toggle:focus,
+.navbar-inverse .navbar-toggle:hover {
+    background-color: rgb(198, 198, 199);
+}
+.navbar-inverse .navbar-toggle {
+    border-color: gainsboro;
+    background-color: gainsboro;
+}
+
+
+/* MAIN CONTENT STYLES */
+
+.main-content {
+    padding: 40px 40px 300px 40px;
+    background-color: rgb(236, 236, 240)
+}
+h2 {
+    font-family: 'Abril Fatface', cursive;
     color: cadetblue;
 }
-
 .underline {
     position: relative;
-    padding-bottom: 20px; 
+    padding-bottom: 20px;
 }
-
 .underline:after {
     position: absolute;
     content: '';
@@ -43,76 +87,45 @@ h2, h3 {
     width: 100%;
     background-color: gainsboro;
 }
-
-/* NAVIGATION STYLES */
-
-nav {
-    background-color: white;
-    padding-left: 8%;
-    padding-right: 10%;
+.bio-photo {
+    float: left;
+    width: 200px;
+    margin: 5px 10px 10px 0;
 }
-
-.navbar {
-    margin-bottom: 0;
-    border: 0;
+p {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.2em;
 }
-
-.navbar-header {
-    background-color: cadetblue;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.navbar-brand {
-    color: gainsboro;
-}
-
-
-
-
-/* MAIN CONTENT STYLES */
-
-.main-content {
-    background: rgb(241, 241, 241) url("../images/shattered_@2x.png") repeat center;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    height: 85vh;
-    padding-bottom: 40px;
-    border-top: 2px solid dimgray;
-
-}
-
-section {
-    background-color: white;
-    padding: 20px;
-}
-
+section,
 aside {
-    background-color: white;
+    background-color: #ffffff;
     padding: 20px;
-    min-width: 250px;
-    margin: 0 auto;
-
+    margin: 10px;
 }
-
 .icon {
     width: 60px;
-}
-.row-space {
-    height: 40px;
+    margin: 5px;
 }
 
+/* PORTFOLIO STYLES */
 
-
-/* ABOUT STYLES */
-
-.bio-photo {
-    max-width: 200px;
-    float: left;
-    padding-right: 10px;
-} 
-
-/* CONTACT STLES */
+.project {
+    position: relative;
+}
+.project-header {
+    font-family: 'Quicksand', sans-serif;
+    color: gainsboro;
+    background-color: cadetblue;
+    padding: 10px;
+    width: 210px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 10px;
+}
+.project img {
+    margin: 5px;
+}
 
 .input-text, textarea {
     width: 100%;
@@ -121,20 +134,68 @@ aside {
 
 /* FOOTER STYLES */
 
-.footer {
-    background-color: dimgray;
+footer {
+    font-family: 'Quicksand', sans-serif;
     width: 100%;
-    height: 60px;
-    line-height: 4;
+    background-color: dimgray;
+    border-top: 8px solid cadetblue;
+    color: gainsboro;
+    height: 90px;
+    padding: 30px;
     position: absolute;
     bottom: 0;
-    border-top: 8px solid cadetblue;
-
 }
 
+/* MEDIA QUERIES */
+/* I felt like I still needed a lot of media queries to get the photos resizing properly since I used hosted images and couldn't use % and the bootstrap img-responsive tag made it difficult to get the right width for the headers. Is it bad practice to use additional media queries with bootstrap? */
 
+@media screen and (max-width:1020px) {
+    .project img {
+        width: 180px;
+    }
 
+    .project-header {
+        width: 180px;
+    }
+}
+@media screen and (max-width: 924px) {
+    .project img {
+        width: 140px;
+    }
 
+    .project-header {
+        width: 140px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .project img {
+        width: 350px;
+    }
 
+    .project-header {
+        width: 350px;
+    }
+}
+@media screen and (max-width: 520px) {
+    .project img {
+        width: 200px;
+    }
 
+    .project-header {
+        width: 200px;
+    }
+}
+@media screen and (min-width:1200px) {
+    .main-content {
+        padding: 20px 20% 400px 10%;
+    }
 
+    .navbar {
+        padding: 1% 10%;
+    }
+
+    footer {
+        padding: 50px;
+        height: 150px;
+    }
+}
